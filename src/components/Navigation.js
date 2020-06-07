@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Navigation = ({ onRouteChange, isSignedIn }) => {
-    if (isSignedIn) {
+const Navigation = () => {
+    if (true) {
       return (
               <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top" >
               <a style={{cursor:'pointer'}} className="navbar-brand ">Nyilvántartó</a>
@@ -13,15 +14,15 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item active">
-                    <a style={{cursor:'pointer'}} className="nav-link" >Autók listája <span className="sr-only">(current)</span></a>
+                    <a className="nav-link" >Autók listája <span className="sr-only"></span></a>
                   </li>
                   <li className="nav-item">
-                    <a onClick={() => onRouteChange('addcar')} style={{cursor:'pointer'}} className="nav-link" >Hozzáadás</a>
+                    <a className="nav-link" >Hozzáadás</a>
                   </li>
                 </ul>
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
-                      <a onClick={() => onRouteChange('signout')} style={{cursor:'pointer'}} className="nav-link" >Kijelentkezés</a>
+                      <a className="nav-link" >Kijelentkezés</a>
                   </li>
                 </ul>
               </div>
@@ -38,11 +39,11 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                    <a onClick={() => onRouteChange('register')} style={{cursor:'pointer'}} className="nav-link" >Regisztráció</a>
-                </li>
-                <li className="nav-item">
-                    <a onClick={() => onRouteChange('signin')} style={{cursor:'pointer'}} className="nav-link" >Bejelentkezés</a>
-                </li>
+                 <Link to='/register' ><a className="nav-link" >Regisztráció</a></Link>
+              </li>
+              <li className="nav-item">
+                  <Link to='/' ><a className="nav-link" >Bejelentkezés</a></Link>
+              </li>
               </ul>
             </div>
           </nav>

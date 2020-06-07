@@ -1,44 +1,24 @@
 import React, { Component } from 'react';
+// import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Content from './components/Content';
-// import AddCar from './components/AddCar';
-import Register from './components/Register';
-import SignIn from './components/SignIn';
+import data from "./data.json";
 
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      route: 'signin',
-      isSignedIn: false
+      
     }
-  }
-
-  onRouteChange = (route) => {
-    if (route === 'signout'){
-      this.setState({isSignedIn: false});
-    } else if (route === 'home'){
-      this.setState({isSignedIn: true});
-    }
-    this.setState({route: route});
   }
 
   render(){
-    const { isSignedIn, route } = this.state;
     return (
       <div className="App">
-
-       <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
-        { route === 'home' 
-          ?
-            <Content />
-          : (
-              route === 'signin'
-              ? <SignIn onRouteChange={this.onRouteChange}/>  
-              : <Register onRouteChange={this.onRouteChange} />
-          )
-      }
+       <Navigation />
+       <Content data={data}/>
+        
       </div>
     );
   }

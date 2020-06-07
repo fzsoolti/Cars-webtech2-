@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddCar = ( {onRouteChange} ) => {
+const AddCar = () => {
     return (
         <div className="w-75 pt-4 mt-5" style={{margin:'8px'}}>
             <form>
@@ -47,7 +47,7 @@ const AddCar = ( {onRouteChange} ) => {
                 </label>
                 </div>
             </div>
-            <button onClick={() => onRouteChange('home')}  type="submit" className="btn btn-dark">Hozzáadás</button>
+            <button type="submit" className="btn btn-dark">Hozzáadás</button>
             </form>
         </div>
     );

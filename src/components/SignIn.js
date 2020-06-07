@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SignIn = ( {onRouteChange} ) => {
+const SignIn = () => {
     return (
         <div className="w-75 pt-4 mt-5" style={{margin:'8px'}}>
             <form>
@@ -37,7 +37,7 @@ const SignIn = ( {onRouteChange} ) => {
                 </label>
                 </div>
             </div>
-            <button onClick={() => onRouteChange('home')}  type="submit" className="btn btn-dark">BEJELENTKEZES</button>
+            <button  type="submit" className="btn btn-dark">BEJELENTKEZES</button>
             </form>
         </div>
     );

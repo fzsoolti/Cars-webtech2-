@@ -1,0 +1,42 @@
+[
+    {
+        "id": "ksb-916",
+        "manufacturer": "peugeot",
+        "type": "307",
+        "year": "2007",
+        "fuel": "dízel",
+        "hp": "110",
+        "engine": "1600",
+        "valid": "2020/2"
+    },
+    {
+        "id": "myx-438",
+        "manufacturer": "suzuki",
+        "type": "swift",
+        "year": "2004",
+        "fuel": "benzin",
+        "hp": "105",
+        "engine": "1600",
+        "valid": "2022/2"
+      },
+      {
+        "id": "asd-123",
+        "manufacturer": "bmw",
+        "type": "m3",
+        "year": "2004",
+        "fuel": "benzin",
+        "hp": "105",
+        "engine": "2000",
+        "valid": "2022/2"
+      },
+      {
+        "id": "bel-645",
+        "manufacturer": "lada",
+        "type": "niva",
+        "year": "2004",
+        "fuel": "benzin",
+        "hp": "105",
+        "engine": "1600",
+        "valid": "2022/2"
+      }
+  ]
