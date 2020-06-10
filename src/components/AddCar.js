@@ -2,49 +2,49 @@ import React from 'react';
 
 const AddCar = () => {
     return (
-        <div className="w-75 pt-4 mt-5" style={{margin:'8px'}}>
+        <div className="container w-75 pt-4 mt-5" >
             <form>
-            <div className="form-row ">
-                <div className="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" className="form-control" id="inputEmail4" placeholder="Email" />
+            <div className="form-row">
+                <div className="form-group col">
+                    <label for="inputId">Rendszám</label>
+                    <input type="text" className="form-control" id="inputId" placeholder="ASD-123" />
                 </div>
-                <div className="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" className="form-control" id="inputPassword4" placeholder="Password" />
+                <div className="form-group col">
+                    <label for="inputValid">Műszaki érvényesség</label>
+                    <input className="form-control" type="date" id="inputValid"/>
                 </div>
-            </div>
-            <div className="form-group">
-                <label for="inputAddress">Address</label>
-                <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" />
-            </div>
-            <div className="form-group">
-                <label for="inputAddress2">Address 2</label>
-                <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
             </div>
             <div className="form-row">
-                <div className="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" className="form-control" id="inputCity" />
+                <div className="form-group col">
+                    <label for="inputManufacturer">Gyártó</label>
+                    <input type="text" className="form-control" id="inputManufacturer" placeholder="BMW, SKODA, PEUGEOT.." />
                 </div>
-                <div className="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" className="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                </select>
+                <div className="form-group col">
+                    <label for="inputType">Típus</label>
+                    <input type="text" className="form-control" id="inputType" placeholder="AUTÓ TÍPUSA" />
                 </div>
-                <div className="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" className="form-control" id="inputZip" />
+                <div className="form-group col">
+                    <label for="inputYear">Évjárat</label>
+                    <input type="text" className="form-control" id="inputYear" placeholder="GYÁRTÁSI ÉV" />
                 </div>
             </div>
-            <div className="form-group">
-                <div className="form-check">
-                <input className="form-check-input" type="checkbox" id="gridCheck" />
-                <label className="form-check-label" for="gridCheck">
-                    Check me out
-                </label>
+            <div className="form-row">
+                <div className="form-group col">
+                    <label for="inputFuel">Üzemanyag</label>
+                    <select class="form-control" id="inputFuel">
+                        <option>Benzin</option>
+                        <option>Dízel</option>
+                        <option>Elektromos</option>
+                        <option>Gáz</option>
+                        </select>
+                </div>
+                <div className="form-group col">
+                    <label for="inputHP">Teljesítmény</label>
+                    <input type="text" className="form-control" id="inputHP" placeholder="LÓERŐ" />
+                </div>
+                <div className="form-group col">
+                    <label for="inputEngine">Hengerűrtartalom</label>
+                    <input type="text" className="form-control" id="inputEngine" placeholder="KÖBCENTI" />
                 </div>
             </div>
             <button type="submit" className="btn btn-dark">Hozzáadás</button>

@@ -1,4 +1,6 @@
 import React from 'react';
+import editicon from '../editicon.png'
+import deleteicon from '../deleteicon.png'
 
 const ListElement = (props) => {
     return (
@@ -58,8 +60,8 @@ const ListElement = (props) => {
                        </div>
                    </div>
                    <div className="modal-footer">
-                       <button type="button" className="btn btn-danger">Törlés</button>
-                       <button type="button" className="btn btn-success">Szerkesztés</button>
+                       <button type="button" className="btn btn-danger"><img src={deleteicon} alt="eye" height="25px" width="auto"/> Törlés</button>
+                       <button type="button" className="btn btn-success"><img src={editicon} alt="eye" height="25px" width="auto"/> Szerkesztés</button>
                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Bezárás</button>
                    </div>
                    </div>

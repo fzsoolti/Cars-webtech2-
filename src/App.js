@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Content from './components/Content';
+import AddCar from './components/AddCar';
 import data from "./data.json";
 
 
@@ -15,11 +16,18 @@ class App extends Component {
 
   render(){
     return (
+      <Router>
       <div className="App">
        <Navigation />
-       <Content data={data}/>
-        
+       <Route exact path="/" render={props => (
+        <Content data={data}/>
+       ) } />
+       <Route path="/addcar" render={props => (
+         <AddCar />
+       ) } />
+
       </div>
+      </Router>
     );
   }
 
