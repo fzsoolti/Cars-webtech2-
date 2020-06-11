@@ -39,7 +39,7 @@ const AddCar = () => {
                         </select>
                 </div>
                 <div className="form-group col">
-                    <label for="inputHP">Teljesítmény</label>
+                    <label for="inputHp">Teljesítmény</label>
                     <input type="text" className="form-control" id="inputHP" placeholder="LÓERŐ" />
                 </div>
                 <div className="form-group col">

@@ -23,7 +23,7 @@ const ListElement = (props) => {
                            <span aria-hidden="true">&times;</span>
                        </button>
                    </div>
-                   <div className="modal-body">
+                   <div className="modal-body ">
                        <div>
                         <div className="container text-uppercase">
                                 <div className="row p-3">
