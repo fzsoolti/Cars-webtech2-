@@ -14,35 +14,35 @@ module.exports = function validateCarInput(data) {
   data.engine = !isEmpty(data.engine) ? data.engine : "";
 
   if (Validator.isEmpty(data.plate)) {
-    errors.plate = "Plate is required";
+    errors.plate = "Rendszám szükséges!";
   }
 
   if (Validator.isEmpty(data.validity)) {
-    errors.validity = "Date is required";
+    errors.validity = "Dátum szükséges!";
   }
 
   if (Validator.isEmpty(data.manufacturer)) {
-    errors.manufacturer = "Manufacturer is required";
+    errors.manufacturer = "Gyártó szükséges!";
   }
 
   if (Validator.isEmpty(data.type)) {
-    errors.type = "Type is required";
+    errors.type = "Típus szükséges!";
   }
 
   if (Validator.isEmpty(data.year)) {
-    errors.year = "Year is required";
+    errors.year = "Év szükséges!";
   }
 
   if (Validator.isEmpty(data.fuel)) {
-    errors.fuel = "Fuel is required";
+    errors.fuel = "Üzemanyag szükséges!";
   }
 
   if (Validator.isEmpty(data.hp)) {
-    errors.hp = "hp is required";
+    errors.hp = "Lóerő szükséges!";
   }
 
   if (Validator.isEmpty(data.engine)) {
-    errors.engine = "Engine is required";
+    errors.engine = "Hengerűrtartalom szükséges!";
   }
 
   return {

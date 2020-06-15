@@ -18,7 +18,7 @@ const User = require('../../models/User');
 //@access   Public
 router.get('/test', (req, res) => res.json({ msg: "Users Works" }));
 
-//@route    GET api/users/register
+//@route    POST api/users/register
 //@desc     Register user
 //@access   Public
 router.post('/register', (req, res) => {
@@ -32,7 +32,7 @@ router.post('/register', (req, res) => {
     User.findOne({ name: req.body.name })
         .then(user => {
             if (user) {
-                errors.name = 'username already exists';
+                errors.name = 'Ez a felhasználó már létezik!';
                 return res.status(400).json(errors);
             } else {
                 const newUser = new User({
@@ -54,7 +54,7 @@ router.post('/register', (req, res) => {
         })
 });
 
-//@route    GET api/users/login
+//@route    POST api/users/login
 //@desc     Login user / returning token
 //@access   Public
 router.post('/login', (req, res) => {
@@ -73,7 +73,7 @@ router.post('/login', (req, res) => {
         .then(user => {
             //check for user
             if (!user) {
-                errors.name = 'User not found';
+                errors.name = 'Nincs ilyen felhasználó!';
                 return res.status(404).json(errors);
             }
 
@@ -96,7 +96,7 @@ router.post('/login', (req, res) => {
                                 });
                             });
                     } else {
-                        errors.password = 'Password incorrect';
+                        errors.password = 'Helytelen jelszó!';
                         return res.status(400).json(errors);
                     }
                 })

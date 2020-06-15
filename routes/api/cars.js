@@ -13,7 +13,7 @@ const validateCarInput = require("../../validation/cars");
 router.get('/test', (req, res) => res.json({ msg: "Cars Works" }));
 
 
-// @route   Post api/cars/add
+// @route   POST api/cars/add
 // @desc    Add car
 // @access  Private
 router.post(
@@ -29,7 +29,7 @@ router.post(
     Car.findOne({ plate: req.body.plate })
       .then((car) => {
         if (car) {
-          errors.plate = "Car already exists!";
+          errors.plate = "Ez az autó már a nyilvántartásban van!";
           return res.status(400).json(errors);
         }
 
@@ -101,7 +101,7 @@ router.delete(
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
       Car.findByIdAndDelete(req.params.id)
-        .then(() => res.json("Car deleted"))
+        .then(() => res.json("Autó törölve"))
         .catch((err) => res.status(400).json(err));
     }
   );

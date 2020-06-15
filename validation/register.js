@@ -10,27 +10,27 @@ module.exports = function validateRegisterInput(data){
 
 
     if(!Validator.isLength(data.name,{min: 2, max: 30})){
-        errors.name = "Name mut be between 2 and 30 characters";
+        errors.name = "A felhasználónévnek 2 és 30 karakter között kell lennie!";
     }
 
     if(Validator.isEmpty(data.name)){
-        errors.name = 'Username is required';
+        errors.name = 'Felhasználónév megadása szükséges!';
     }
 
     if(Validator.isEmpty(data.password)){
-        errors.password = 'Password is required';
+        errors.password = 'Jeslzó megadása szükséges!';
     }
 
     if(Validator.isEmpty(data.password2)){
-        errors.password2 = 'Confirm password is required';
+        errors.password2 = 'Megerősítő jelszó megadása szükséges!';
     }
 
     if(!Validator.isLength(data.password, {min: 6, max: 30})){
-        errors.password = 'Password must be at least 6 characters';
+        errors.password = 'Jelszónak legalább 6 karakternek kell lennie!';
     }
 
     if(!Validator.equals(data.password, data.password2)){
-        errors.password2 = 'Password must match';
+        errors.password2 = 'Jelszó nem egyezik!';
     }
 
     return{

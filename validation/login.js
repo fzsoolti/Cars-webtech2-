@@ -8,11 +8,11 @@ module.exports = function validateLoginInput(data){
     data.password = !isEmpty(data.password) ? data.password : '';
 
     if(Validator.isEmpty(data.name)){
-        errors.name = 'Username is required';
+        errors.name = 'Felhasználónév megadása szükséges!';
     }
 
     if(Validator.isEmpty(data.password)){
-        errors.password = 'Password is required';
+        errors.password = 'Jelszó megadása szükséges!';
     }
 
 
