@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {logoutUser} from '../../actions/authActions';
+import { connect } from 'react-redux';
+import { logoutUser } from '../../actions/authActions';
 
 class Navbar extends Component {
 
-    onLogoutClick(e){
+    onLogoutClick(e) {
         e.preventDefault();
         this.props.logoutUser();
     }
@@ -15,21 +15,31 @@ class Navbar extends Component {
         const { isAuthenticated } = this.props.auth;
 
         const authLinks = (
-            <ul className="navbar-nav ml-auto">
-                        <li className="nav-item">
-                            <Link to='#' onClick={this.onLogoutClick.bind(this)} className="nav-link">Kijelentkezés</Link>
-                        </li>
+            <>
+            <ul className="navbar-nav mr-auto">
+                <li className="nav-item">
+                    <Link to='/dashboard' className="nav-link">Autók listája</Link>
+                </li>
+                <li className="nav-item">
+                    <Link to='/AddCar' className="nav-link">Hozzáadás</Link>
+                </li>
             </ul>
+            <ul className="navbar-nav ml-auto">
+                <li className="nav-item">
+                    <Link to='#' onClick={this.onLogoutClick.bind(this)} className="nav-link">Kijelentkezés</Link>
+                </li>
+            </ul>
+            </>
         );
 
         const guestLinks = (
             <ul className="navbar-nav ml-auto">
-                        <li className="nav-item">
-                            <Link to='/register' className="nav-link" >Regisztráció</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to='/login' className="nav-link" >Bejelentkezés</Link>
-                        </li>
+                <li className="nav-item">
+                    <Link to='/register' className="nav-link" >Regisztráció</Link>
+                </li>
+                <li className="nav-item">
+                    <Link to='/login' className="nav-link" >Bejelentkezés</Link>
+                </li>
             </ul>
         );
 
