@@ -55,7 +55,8 @@ class Login extends Component {
         const { errors } = this.state;
 
         return (
-            <div>
+            <div className="container w-25 pt-4 mt-5">
+                <h1 className="p-2">Bejelentkezés</h1>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label >Felhasználónév</label>
@@ -69,7 +70,7 @@ class Login extends Component {
                             onChange={this.onChange} />
                         {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
                     </div>
-                    <button type="submit" className="btn btn-primary">Küldés</button>
+                    <button type="submit" className="btn btn-dark">Küldés</button>
                 </form>
             </div>
         )

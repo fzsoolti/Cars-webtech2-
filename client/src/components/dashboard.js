@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import Moment from 'react-moment';
+import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux';
 
 const Car = (props) => (
     <div className="card bg-light m-2" style={{ width: "300px" }}>
@@ -59,10 +61,8 @@ const Car = (props) => (
                             </div>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-danger">
-                                {/* <img src={deleteicon} alt="eye" height="25px" width="auto" /> */}
-                            Törlés</button>
-                            <button type="button" className="btn btn-success">{/*<img src={editicon} alt="eye" height="25px" width="auto" />*/} Szerkesztés</button>
+                            <button type="button" className="btn btn-danger" onClick={() => { props.deleteCar(props.cars._id) }}>Törlés</button>
+                            <button type="button" className="btn btn-success">Szerkesztés</button>
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Bezárás</button>
                         </div>
                     </div>
@@ -77,6 +77,8 @@ class dashboard extends Component {
         super(props);
 
         this.carList = this.carList.bind(this);
+
+        this.deleteCar = this.deleteCar.bind(this)
 
         this.state = {
             cars: [],
@@ -101,6 +103,15 @@ class dashboard extends Component {
         });
     }
 
+    deleteCar(id) {
+        axios.delete('/api/cars/delete/'+id)
+          .then(response => { console.log(response.data)});
+    
+        this.setState({
+          cars: this.state.cars.filter(el => el._id !== id)
+        })
+      }
+
     render() {
         return (
             <div className="container-fluid fill text-center justify-content-center row pt-2">
@@ -110,4 +121,13 @@ class dashboard extends Component {
     }
 }
 
-export default dashboard;
+  
+dashboard.propTypes = {
+    auth: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) => ({
+    auth: state.auth
+});
+
+export default connect(mapStateToProps)(dashboard);
